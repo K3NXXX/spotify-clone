@@ -13,14 +13,18 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anonymous.spotifyclone"
+      "package": "com.anonymous.spotifyclone",
+      "runtimeVersion": "1.0.0"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -29,6 +33,14 @@
       [
         "expo-font"
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "2a8e72c4-2c0a-485f-a172-7c8067f3e3c8"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/2a8e72c4-2c0a-485f-a172-7c8067f3e3c8"
+    }
   }
 }

@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
 	introImage: {
 		width: width,
 		height: 550,
+		resizeMode: 'cover'
 	},
 	introContent: {
 		alignItems: "center",
