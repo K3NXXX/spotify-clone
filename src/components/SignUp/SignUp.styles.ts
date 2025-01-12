@@ -1,9 +1,18 @@
-import { StyleSheet } from 'react-native'
-
+import { Dimensions, StyleSheet } from 'react-native'
+const { height } = Dimensions.get('window')
 export const styles = StyleSheet.create({
 	signRoot: {
-		paddingTop: 50,
+		flex: 1,
+		backgroundColor: 'rgb(18, 18, 18)',
+	},
+	signWrapper: {
+		paddingTop: 80,
 		alignItems: 'center',
+		maxWidth: 1024,
+		width: '100%',
+		alignSelf: 'center',
+		backgroundColor: 'rgb(18, 18, 18)',
+		paddingHorizontal: 20,
 	},
 	signCreateText: {
 		color: 'white',
@@ -17,26 +26,38 @@ export const styles = StyleSheet.create({
 		fontFamily: 'avenir-bold',
 		marginBottom: 5,
 	},
+	signForm: {
+		width: '100%',
+		maxWidth: 360,
+	},
+
 	signInputWrapper: {
-		marginBottom: 30
+		marginBottom: height > 745 ? 30 : 18,
+		
 	},
 	signInput: {
 		backgroundColor: 'rgb(119, 119, 119)',
 		borderRadius: 5,
 		paddingVertical: 16,
 		paddingHorizontal: 20,
-		width: 365,
 		color: 'white',
+		width: '100%',
+		maxWidth: 500,
 		fontFamily: 'avenir-medium',
 		letterSpacing: 1,
-		fontSize: 16
+		fontSize: 16,
 	},
 	signUpBtn: {
 		borderRadius: 45,
 		backgroundColor: 'rgb(30, 215, 96)',
 		paddingVertical: 16,
-		paddingHorizontal: 130,
 		marginTop: 22,
+		alignItems: 'center',
+	},
+	errorText: {
+		color: "red",
+		fontSize: 14,
+		paddingTop: 3
 	},
 	btnPressed: {
 		backgroundColor: 'rgb(25, 180, 80)',
@@ -44,6 +65,6 @@ export const styles = StyleSheet.create({
 	signUpBtnText: {
 		color: 'black',
 		fontFamily: 'avenir-bold',
-	}
+	},
 	
 })

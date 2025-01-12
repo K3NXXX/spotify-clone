@@ -1,9 +1,11 @@
+import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
 import { StatusBar } from 'expo-status-bar'
 import { useCallback } from 'react'
 import { StyleSheet, View } from 'react-native'
+import { SCREENS } from './src/constants/screens.contstants'
 import IntroScreen from './src/screens/IntroScreen'
 import SignUpScreen from './src/screens/SignUpScreen'
 
@@ -28,16 +30,19 @@ export default function App() {
 		return null
 	}
 	return (
-		<View style={styles.container} onLayout={handleOnLayout}>
-			<View style={styles.wrapper}>
-				<IntroScreen/>
-				{/* <SignUpScreen/> */}
-				
-		
-			</View>
+		<NavigationContainer>
+			<View style={styles.container} onLayout={handleOnLayout}>
+				<Stack.Navigator
+					screenOptions={{ headerShown: false }}
+					initialRouteName={SCREENS.INTRO}
+				>
+					<Stack.Screen name={SCREENS.INTRO} component={IntroScreen} />
+					<Stack.Screen name={SCREENS.SIGNUP} component={SignUpScreen} />
+				</Stack.Navigator>
 
-			<StatusBar style='light' />
-		</View>
+				<StatusBar style='light' />
+			</View>
+		</NavigationContainer>
 	)
 }
 
@@ -45,11 +50,5 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: 'rgb(18, 18, 18)',
-	},
-	wrapper: {
-		maxWidth: 1024,
-		width: '100%',
-		alignSelf: 'center',
-		alignItems: 'center',
 	},
 })

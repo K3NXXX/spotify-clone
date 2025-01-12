@@ -6,9 +6,12 @@ import {
 const { height } = Dimensions.get('window')
 
 export const styles = StyleSheet.create({
+	
 	introRoot: {
-	
-	
+		maxWidth: 1024,
+		width: '100%',
+		alignSelf: 'center',
+		backgroundColor: 'rgb(18, 18, 18)',
 	},
 	introImage: {
 		maxWidth: 1024,
