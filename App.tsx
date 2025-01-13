@@ -8,6 +8,7 @@ import { StyleSheet, View } from 'react-native'
 import { SCREENS } from './src/constants/screens.contstants'
 import IntroScreen from './src/screens/IntroScreen'
 import SignUpScreen from './src/screens/SignUpScreen'
+import LoginScreen from './src/screens/LoginScreen'
 
 SplashScreen.preventAutoHideAsync()
 
@@ -38,6 +39,7 @@ export default function App() {
 				>
 					<Stack.Screen name={SCREENS.INTRO} component={IntroScreen} />
 					<Stack.Screen name={SCREENS.SIGNUP} component={SignUpScreen} />
+					<Stack.Screen name={SCREENS.LOGIN} component={LoginScreen} />
 				</Stack.Navigator>
 
 				<StatusBar style='light' />

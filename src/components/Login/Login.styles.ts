@@ -2,38 +2,38 @@ import { Dimensions, StyleSheet } from 'react-native'
 import { globalStyles } from '../../styles/global.styles'
 const { height } = Dimensions.get('window')
 export const styles = StyleSheet.create({
-	signRoot: {
+	loginRoot: {
 		flex: 1,
 		backgroundColor: 'rgb(18, 18, 18)',
 	},
-	signWrapper: {
+	loginWrapper: {
 		paddingTop: 80,
 		alignItems: 'center',
 		paddingHorizontal: 20,
 		...globalStyles.pagesInitial,
 	},
-	signCreateText: {
+	loginCreateText: {
 		color: 'white',
 		fontSize: 18,
 		fontFamily: 'avenir-bold',
 		marginBottom: 30,
 	},
-	signLabel: {
+	loginLabel: {
 		color: 'white',
 		fontSize: 20,
 		fontFamily: 'avenir-bold',
 		marginBottom: 5,
 	},
-	signForm: {
+	loginForm: {
 		width: '100%',
 		maxWidth: 360,
 	},
 
-	signInputWrapper: {
+	loginInputWrapper: {
 		marginBottom: height > 745 ? 30 : 18,
 		
 	},
-	signInput: {
+	loginInput: {
 		backgroundColor: 'rgb(119, 119, 119)',
 		borderRadius: 5,
 		paddingVertical: 16,
@@ -45,7 +45,7 @@ export const styles = StyleSheet.create({
 		letterSpacing: 1,
 		fontSize: 16,
 	},
-	signUpBtn: {
+	loginUpBtn: {
 		borderRadius: 45,
 		backgroundColor: 'rgb(30, 215, 96)',
 		paddingVertical: 16,
@@ -60,7 +60,7 @@ export const styles = StyleSheet.create({
 	btnPressed: {
 		backgroundColor: 'rgb(25, 180, 80)',
 	},
-	signUpBtnText: {
+	loginUpBtnText: {
 		color: 'black',
 		fontFamily: 'avenir-bold',
 	},

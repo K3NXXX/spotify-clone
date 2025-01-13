@@ -160,7 +160,7 @@ const SignUp: React.FC = () => {
 						style={styles.signUpBtn}
 						onPress={handleSubmit(onSubmit)}
 					>
-						<Text style={styles.signUpBtnText}>Submit</Text>
+						<Text style={styles.signUpBtnText}>Create account</Text>
 					</TouchableOpacity>
 				</View>
 			</View>

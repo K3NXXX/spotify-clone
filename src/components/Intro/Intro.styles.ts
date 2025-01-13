@@ -3,15 +3,12 @@ import {
 	heightPercentageToDP as hp,
 	widthPercentageToDP as wp,
 } from 'react-native-responsive-screen'
+import { globalStyles } from '../../styles/global.styles'
 const { height } = Dimensions.get('window')
 
 export const styles = StyleSheet.create({
-	
 	introRoot: {
-		maxWidth: 1024,
-		width: '100%',
-		alignSelf: 'center',
-		backgroundColor: 'rgb(18, 18, 18)',
+		...globalStyles.pagesInitial,
 	},
 	introImage: {
 		maxWidth: 1024,
