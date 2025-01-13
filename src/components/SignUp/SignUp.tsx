@@ -52,6 +52,7 @@ const SignUp: React.FC = () => {
 							}}
 							render={({ field: { onChange, onBlur, value } }) => (
 								<TextInput
+								selectionColor="rgb(30, 215, 96)"
 									onBlur={onBlur}
 									onChangeText={onChange}
 									value={value}
@@ -82,6 +83,7 @@ const SignUp: React.FC = () => {
 							}}
 							render={({ field: { onChange, onBlur, value } }) => (
 								<TextInput
+									selectionColor="rgb(30, 215, 96)"
 									onBlur={onBlur}
 									onChangeText={onChange}
 									value={value}
@@ -112,6 +114,7 @@ const SignUp: React.FC = () => {
 							}}
 							render={({ field: { onChange, onBlur, value } }) => (
 								<TextInput
+									selectionColor="rgb(30, 215, 96)"
 									onBlur={onBlur}
 									onChangeText={onChange}
 									value={value}
@@ -137,6 +140,7 @@ const SignUp: React.FC = () => {
 							}}
 							render={({ field: { onChange, onBlur, value } }) => (
 								<TextInput
+									selectionColor="rgb(30, 215, 96)"
 									onBlur={onBlur}
 									onChangeText={onChange}
 									value={value}
