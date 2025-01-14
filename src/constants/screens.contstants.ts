@@ -1,7 +1,7 @@
-class Screens {
-	INTRO = "Intro"
-	SIGNUP = "SignUp"
-	LOGIN = "Login"
-}
+import { IScreens } from '../@types/navigation.types'
 
-export const SCREENS = new Screens()
+export const SCREENS: IScreens = {
+	INTRO: 'Intro',
+	SIGNUP: 'SignUp',
+	LOGIN: 'Login',
+  };

@@ -1,18 +1,12 @@
 import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
 import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
 import { StatusBar } from 'expo-status-bar'
 import { useCallback } from 'react'
 import { StyleSheet, View } from 'react-native'
-import { SCREENS } from './src/constants/screens.contstants'
-import IntroScreen from './src/screens/IntroScreen'
-import SignUpScreen from './src/screens/SignUpScreen'
-import LoginScreen from './src/screens/LoginScreen'
+import Navigation from './src/navigation/Navitagion'
 
 SplashScreen.preventAutoHideAsync()
-
-const Stack = createStackNavigator()
 
 export default function App() {
 	const [isLoaded] = useFonts({
@@ -33,15 +27,7 @@ export default function App() {
 	return (
 		<NavigationContainer>
 			<View style={styles.container} onLayout={handleOnLayout}>
-				<Stack.Navigator
-					screenOptions={{ headerShown: false }}
-					initialRouteName={SCREENS.INTRO}
-				>
-					<Stack.Screen name={SCREENS.INTRO} component={IntroScreen} />
-					<Stack.Screen name={SCREENS.SIGNUP} component={SignUpScreen} />
-					<Stack.Screen name={SCREENS.LOGIN} component={LoginScreen} />
-				</Stack.Navigator>
-
+				<Navigation />
 				<StatusBar style='light' />
 			</View>
 		</NavigationContainer>
