@@ -6,11 +6,12 @@ import FacebookIcon from '../../../assets/intro/facebookIcon.svg'
 import GoogleIcon from '../../../assets/intro/googleIcon.svg'
 import introBg from '../../../assets/intro/intro-bg.png'
 import Logo from '../../../assets/intro/logo.svg'
-import { SCREENS } from '../../constants/screens.contstants'
+import { SCREENS } from '../../constants/screens.constants'
 import { styles } from './Intro.styles'
 
 const Intro: React.FC = () => {
 	const navigation = useNavigation()
+	
 	return (
 		<ScrollView
 			contentContainerStyle={{

@@ -1,12 +1,16 @@
 import { NavigationContainer } from '@react-navigation/native'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
 import { StatusBar } from 'expo-status-bar'
 import { useCallback } from 'react'
 import { StyleSheet, View } from 'react-native'
-import Navigation from './src/navigation/Navitagion'
+import Navigation from './src/navigation/Navigation'
 
 SplashScreen.preventAutoHideAsync()
+const queryClient = new QueryClient()
+
+
 
 export default function App() {
 	const [isLoaded] = useFonts({
@@ -25,12 +29,14 @@ export default function App() {
 		return null
 	}
 	return (
-		<NavigationContainer>
-			<View style={styles.container} onLayout={handleOnLayout}>
-				<Navigation />
-				<StatusBar style='light' />
-			</View>
-		</NavigationContainer>
+		<QueryClientProvider client={queryClient}>
+			<NavigationContainer>
+				<View style={styles.container} onLayout={handleOnLayout}>
+					<Navigation />
+					<StatusBar style='light' />
+				</View>
+			</NavigationContainer>
+		</QueryClientProvider>
 	)
 }
 

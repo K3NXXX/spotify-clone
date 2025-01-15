@@ -1,5 +1,5 @@
 import { Dimensions, StyleSheet } from 'react-native'
-import { globalStyles } from '../../styles/global.styles'
+import { globalStyles } from '../../../styles/global.styles'
 const { height } = Dimensions.get('window')
 export const styles = StyleSheet.create({
 	signRoot: {
@@ -31,7 +31,6 @@ export const styles = StyleSheet.create({
 
 	signInputWrapper: {
 		marginBottom: height > 745 ? 30 : 18,
-		
 	},
 	signInput: {
 		backgroundColor: 'rgb(119, 119, 119)',
@@ -53,9 +52,9 @@ export const styles = StyleSheet.create({
 		alignItems: 'center',
 	},
 	errorText: {
-		color: "red",
+		color: 'red',
 		fontSize: 14,
-		paddingTop: 3
+		paddingTop: 3,
 	},
 	btnPressed: {
 		backgroundColor: 'rgb(25, 180, 80)',
@@ -64,5 +63,4 @@ export const styles = StyleSheet.create({
 		color: 'black',
 		fontFamily: 'avenir-bold',
 	},
-	
 })

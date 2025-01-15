@@ -2,7 +2,7 @@ export interface ISignUpData {
 	email: string
 	name: string
 	password: string
-	confirmPassword: string
+	passwordConfirm: string
 }
 
 export interface ILoginData {

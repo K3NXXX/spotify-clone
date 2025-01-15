@@ -1,8 +1,12 @@
+import { useMutation } from '@tanstack/react-query'
 import React from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { Text, TextInput, TouchableOpacity, View } from 'react-native'
-import { ISignUpData } from '../../@types/auth.types'
+import { ISignUpData } from '../../../@types/auth.types'
+import { authService } from '../../../services/auth.service'
 import { styles } from './SignUp.styles'
+import { useNavigation } from '@react-navigation/native'
+import { SCREENS } from '../../../constants/screens.constants'
 
 const SignUp: React.FC = () => {
 	const {
@@ -16,14 +20,22 @@ const SignUp: React.FC = () => {
 			name: '',
 			email: '',
 			password: '',
-			confirmPassword: '',
+			passwordConfirm: '',
 		},
 	})
 
 	const password = watch('password')
+	const navigation = useNavigation()
 
-	const onSubmit = (registerData: ISignUpData) => {
-		console.log('data', registerData)
+	const { mutate } = useMutation({
+		mutationKey: ['signup'],
+		mutationFn: (signupData: ISignUpData) => authService.signup(signupData),
+	})
+
+	const onSubmit = (signupData: ISignUpData) => {
+		mutate(signupData)
+		//@ts-ignore
+		navigation.navigate(SCREENS.EMAIL_VERIFICATION)
 	}
 
 	return (
@@ -52,7 +64,7 @@ const SignUp: React.FC = () => {
 							}}
 							render={({ field: { onChange, onBlur, value } }) => (
 								<TextInput
-								selectionColor="rgb(30, 215, 96)"
+									selectionColor='rgb(30, 215, 96)'
 									onBlur={onBlur}
 									onChangeText={onChange}
 									value={value}
@@ -83,7 +95,7 @@ const SignUp: React.FC = () => {
 							}}
 							render={({ field: { onChange, onBlur, value } }) => (
 								<TextInput
-									selectionColor="rgb(30, 215, 96)"
+									selectionColor='rgb(30, 215, 96)'
 									onBlur={onBlur}
 									onChangeText={onChange}
 									value={value}
@@ -114,7 +126,7 @@ const SignUp: React.FC = () => {
 							}}
 							render={({ field: { onChange, onBlur, value } }) => (
 								<TextInput
-									selectionColor="rgb(30, 215, 96)"
+									selectionColor='rgb(30, 215, 96)'
 									onBlur={onBlur}
 									onChangeText={onChange}
 									value={value}
@@ -140,7 +152,7 @@ const SignUp: React.FC = () => {
 							}}
 							render={({ field: { onChange, onBlur, value } }) => (
 								<TextInput
-									selectionColor="rgb(30, 215, 96)"
+									selectionColor='rgb(30, 215, 96)'
 									onBlur={onBlur}
 									onChangeText={onChange}
 									value={value}
@@ -148,11 +160,11 @@ const SignUp: React.FC = () => {
 									secureTextEntry
 								/>
 							)}
-							name='confirmPassword'
+							name="passwordConfirm"
 						/>
-						{errors.confirmPassword && (
+						{errors.passwordConfirm && (
 							<Text style={styles.errorText}>
-								{errors.confirmPassword.message}
+								{errors.passwordConfirm.message}
 							</Text>
 						)}
 					</View>

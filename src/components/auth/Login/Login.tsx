@@ -1,7 +1,7 @@
 import React from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { Text, TextInput, TouchableOpacity, View } from 'react-native'
-import { ILoginData } from '../../@types/auth.types'
+import { ILoginData } from '../../../@types/auth.types'
 import { styles } from './Login.styles'
 
 const Login: React.FC = () => {
